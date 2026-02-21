@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VISIONARY | Creative Studio Portfolio</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --muted: #a3a3a3;
+      --line: #2a2a2a;
+      --text: #f5f5f5;
+    }
+
+    * {
+      border-radius: 0 !important;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+      letter-spacing: 0.01em;
+    }
+
+    .grain::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.08;
+      z-index: 60;
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08) 0 1px, transparent 1px),
+        radial-gradient(circle at 80% 60%, rgba(255,255,255,0.08) 0 1px, transparent 1px);
+      background-size: 3px 3px, 4px 4px;
+      mix-blend-mode: soft-light;
+    }
+
+    .hero-image {
+      transform-origin: center center;
+      will-change: transform, opacity;
+    }
+
+    .parallax-wrap {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #000;
+    }
+
+    .parallax-img {
+      will-change: transform;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    .line {
+      border-top: 1px solid var(--line);
+    }
+  </style>
+</head>
+<body class="grain">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 border-b border-neutral-800/80 bg-black/45 backdrop-blur-md">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
+      <a href="#" class="text-sm md:text-base tracking-[0.28em] font-semibold">VISIONARY</a>
+      <nav class="text-[11px] md:text-xs tracking-[0.2em] text-neutral-300">
+        <ul class="flex items-center gap-6 md:gap-10">
+          <li><a href="#home" class="hover:text-white transition-colors">HOME</a></li>
+          <li><a href="#works" class="hover:text-white transition-colors">WORKS</a></li>
+          <li><a href="#contact" class="hover:text-white transition-colors">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <!-- Hero -->
+    <section class="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
+      <img
+        src="https://picsum.photos/1920/1080?random=1"
+        alt="Hero Visual"
+        class="hero-image absolute inset-0 w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/45"></div>
+
+      <div class="relative z-10 px-6 text-center max-w-5xl">
+        <p class="hero-title reveal text-[10px] md:text-xs tracking-[0.22em] text-neutral-300 mb-6">
+          CREATIVE STUDIO PORTFOLIO
+        </p>
+        <h1 class="hero-title reveal font-semibold leading-[0.95] uppercase text-5xl sm:text-6xl md:text-8xl lg:text-[9rem] tracking-[0.02em]">
+          <span class="block">Vision</span>
+          <span class="block">Beyond</span>
+          <span class="block">Words</span>
+        </h1>
+      </div>
+    </section>
+
+    <!-- Works -->
+    <section id="works" class="relative py-24 md:py-32 bg-[#0b0b0b]">
+      <div class="max-w-[1600px] mx-auto px-6 md:px-10">
+        <div class="line pt-8 mb-14 md:mb-20 flex items-end justify-between gap-6">
+          <h2 class="reveal text-2xl md:text-4xl tracking-[0.08em] uppercase font-medium">Selected Works</h2>
+          <p class="reveal text-[11px] md:text-xs tracking-[0.16em] text-neutral-400 uppercase">
+            Visuals First. Clarity Always.
+          </p>
+        </div>
+
+        <div class="space-y-24 md:space-y-32">
+          <article class="grid md:grid-cols-12 gap-6 md:gap-10 items-end">
+            <div class="md:col-span-7 parallax-wrap h-[62vh] md:h-[78vh]">
+              <img src="https://picsum.photos/800/1000?random=2" alt="Portfolio 1" class="parallax-img w-full h-[115%] object-cover" />
+            </div>
+            <div class="md:col-span-5 reveal">
+              <p class="text-[10px] tracking-[0.2em] text-neutral-400 uppercase mb-4">01 / Branding Film</p>
+              <h3 class="text-2xl md:text-4xl leading-tight font-medium uppercase">
+                Sculpted Motion
+                <br />
+                For Modern Brands
+              </h3>
+            </div>
+          </article>
+
+          <article class="grid md:grid-cols-12 gap-6 md:gap-10 items-end">
+            <div class="md:col-span-5 reveal md:order-1 order-2">
+              <p class="text-[10px] tracking-[0.2em] text-neutral-400 uppercase mb-4">02 / Art Direction</p>
+              <h3 class="text-2xl md:text-4xl leading-tight font-medium uppercase">
+                Strong Frames
+                <br />
+                Quiet Precision
+              </h3>
+            </div>
+            <div class="md:col-span-7 parallax-wrap h-[62vh] md:h-[78vh] md:order-2 order-1">
+              <img src="https://picsum.photos/800/1000?random=3" alt="Portfolio 2" class="parallax-img w-full h-[115%] object-cover" />
+            </div>
+          </article>
+
+          <article class="grid md:grid-cols-12 gap-6 md:gap-10 items-end">
+            <div class="md:col-span-7 parallax-wrap h-[62vh] md:h-[78vh]">
+              <img src="https://picsum.photos/800/1000?random=4" alt="Portfolio 3" class="parallax-img w-full h-[115%] object-cover" />
+            </div>
+            <div class="md:col-span-5 reveal">
+              <p class="text-[10px] tracking-[0.2em] text-neutral-400 uppercase mb-4">03 / Digital Experience</p>
+              <h3 class="text-2xl md:text-4xl leading-tight font-medium uppercase">
+                Minimal Form
+                <br />
+                Maximum Impact
+              </h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-black border-t border-neutral-800">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-10 py-12 md:py-16 flex flex-col md:flex-row gap-6 md:gap-0 md:items-end md:justify-between">
+      <div>
+        <p class="text-sm tracking-[0.22em] uppercase mb-2">VISIONARY</p>
+        <p class="text-neutral-400 text-sm">Tokyo / New York</p>
+      </div>
+      <div class="text-sm md:text-base text-neutral-200">
+        <p>hello@visionary.studio</p>
+        <p>+81 3 1234 5678</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP / ScrollTrigger / Lenis -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+
+  <script>
+    (function () {
+      const hasGSAP = typeof window.gsap !== "undefined";
+      const hasScrollTrigger = typeof window.ScrollTrigger !== "undefined";
+      const hasLenis = typeof window.Lenis !== "undefined";
+
+      // If animation libraries fail to load, keep the page fully visible.
+      if (!hasGSAP || !hasScrollTrigger) {
+        document.querySelectorAll(".reveal").forEach((el) => {
+          el.style.opacity = "1";
+          el.style.transform = "none";
+        });
+        return;
+      }
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Smooth scrolling with inertia (optional).
+      if (hasLenis) {
+        const lenis = new Lenis({
+          duration: 1.15,
+          smoothWheel: true,
+          wheelMultiplier: 1,
+          touchMultiplier: 1.2
+        });
+        lenis.on("scroll", ScrollTrigger.update);
+        gsap.ticker.add((time) => lenis.raf(time * 1000));
+        gsap.ticker.lagSmoothing(0);
+      }
+
+      // Hero intro animation
+      gsap.set(".hero-image", { opacity: 0, scale: 1.22 });
+      const intro = gsap.timeline({ defaults: { ease: "power3.out" } });
+      intro
+        .to(".hero-image", { scale: 1.02, opacity: 1, duration: 2.2 })
+        .to(".hero-image", { scale: 1, duration: 1.2, ease: "power2.out" }, "-=0.7")
+        .to(".hero-title", {
+          opacity: 1,
+          y: 0,
+          duration: 1.1,
+          stagger: 0.14
+        }, "-=1.0");
+
+      // Scroll-triggered text reveal
+      gsap.utils.toArray(".reveal").forEach((el) => {
+        gsap.fromTo(
+          el,
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1.1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 86%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      });
+
+      // Parallax image movement
+      gsap.utils.toArray(".parallax-wrap").forEach((wrap) => {
+        const img = wrap.querySelector(".parallax-img");
+        gsap.fromTo(
+          img,
+          { yPercent: -8 },
+          {
+            yPercent: 8,
+            ease: "none",
+            scrollTrigger: {
+              trigger: wrap,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 1.2
+            }
+          }
+        );
+      });
+    })();
+  </script>
+</body>
+</html>
